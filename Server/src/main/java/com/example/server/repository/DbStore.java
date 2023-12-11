@@ -40,14 +40,14 @@ public class DbStore {
 
     public DbStore() {
         // Seed Source for testing
-        Source source = Source.newBuilder().setId(RandomHolder.randomKey()).setType("card")
+        Source source = Source.newBuilder().setId("123123123").setType("card")
                 .setAmount(100).setOwner(createOwner()).setReceiver(createReceiver())
                 .setCurrency("USD").setStatementDescriptor("Statement Descriptor")
                 .setFlow(Flow.RECEIVER).setUsage(Usage.REUSABLE).setCreated(Instant.now().getEpochSecond())
                 .build();
         sourceEntities.put(source.getId(), source);
         // Seed Charge for testing
-        Charge charge = Charge.newBuilder().setId(RandomHolder.randomKey()).setAmount(1000)
+        Charge charge = Charge.newBuilder().setId("123123123").setAmount(1000)
                 .setCurrency("USD").setCustomerId("ab1ab2ab3ab4ab5")
                 .setDescription("Charge Description").setReceiptEmail("receipt@email.com")
                 .setStatementDescriptor("Statement Descriptor").setSourceId(source.getId())

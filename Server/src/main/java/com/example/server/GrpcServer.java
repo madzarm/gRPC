@@ -20,7 +20,7 @@ public class GrpcServer {
 
     private final Logger LOG = LoggerFactory.getLogger(getClass());
 
-    @Value("${grpc.port:8080}")
+    @Value("${grpc.port}")
     private int port;
 
     private Server server;

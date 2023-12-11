@@ -15,8 +15,9 @@
     <description>Server</description>
     <properties>
         <java.version>17</java.version>
-        <grpc.java.version>1.54.0</grpc.java.version>
+        <grpc.java.version>1.59.1</grpc.java.version>
     </properties>
+
     <dependencies>
         <!-- Your project's own API as a dependency -->
         <dependency>
