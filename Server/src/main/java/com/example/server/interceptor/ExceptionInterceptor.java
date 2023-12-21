@@ -11,17 +11,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-/**
- * @author : github.com/sharmasourabh
- * @project : Chapter11 - Modern API Development with Spring and Spring Boot Ed 2
- **/
 @Component
 public class ExceptionInterceptor implements ServerInterceptor {
 
     private static final Logger LOG = LoggerFactory.getLogger(ExceptionInterceptor.class);
 
     @Override
-    // RQT - Request Type; RST - Response Type
     public <RQT, RST> ServerCall.Listener<RQT> interceptCall(ServerCall<RQT, RST> serverCall,
                                                              Metadata metadata, ServerCallHandler<RQT, RST> serverCallHandler) {
         ServerCall.Listener<RQT> listener = serverCallHandler.startCall(serverCall, metadata);
