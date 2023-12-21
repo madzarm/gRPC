@@ -1,9 +1,11 @@
 package com.example.client.config;
 
+import com.example.client.deserializer.ProtobufDeserializer;
 import com.example.client.serializer.ProtobufSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.google.protobuf.MessageOrBuilder;
+import com.packt.modern.api.grpc.v1.CreateSourceReq;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,6 +17,7 @@ public class JacksonConfiguration {
         ObjectMapper mapper = new ObjectMapper();
         SimpleModule module = new SimpleModule();
         module.addSerializer(MessageOrBuilder.class, new ProtobufSerializer());
+        module.addDeserializer(CreateSourceReq.class, new ProtobufDeserializer<>(CreateSourceReq.class));
         mapper.registerModule(module);
         return mapper;
     }
