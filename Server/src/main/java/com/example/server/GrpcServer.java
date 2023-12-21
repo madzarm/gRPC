@@ -11,10 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-/**
- * @author : github.com/sharmasourabh
- * @project : chapter11-server - Modern API Development with Spring and Spring Boot Ed 2
- **/
 @Component
 public class GrpcServer {
 
